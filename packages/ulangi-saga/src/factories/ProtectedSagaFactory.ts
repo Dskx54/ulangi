@@ -36,6 +36,7 @@ import { ReminderSaga } from '../sagas/ReminderSaga';
 import { SearchSaga } from '../sagas/SearchSaga';
 import { SetSaga } from '../sagas/SetSaga';
 import { SpacedRepetitionSaga } from '../sagas/SpacedRepetitionSaga';
+import { StatisticsSaga } from '../sagas/StatisticsSaga';
 import { SyncSaga } from '../sagas/SyncSaga';
 import { TranslationSaga } from '../sagas/TranslationSaga';
 import { UploadSetSaga } from '../sagas/UploadSetSaga';
@@ -186,6 +187,7 @@ export class ProtectedSagaFactory {
       new ObserveLocalUpdateSaga(this.databaseEventBus),
       new ApiKeySaga(this.sharedDb, this.modelList.sessionModel),
       new ImageSaga(this.sharedDb, this.modelList.sessionModel),
+      new StatisticsSaga(this.sharedDb, this.modelList.sessionModel),
     ];
 
     if (this.iap !== null) {

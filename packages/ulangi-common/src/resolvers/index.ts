@@ -265,3 +265,15 @@ export { UploadUserRequestResolver } from './request/UploadUserRequestResolver';
 export {
   UploadVocabularyRequestResolver,
 } from './request/UploadVocabularyRequestResolver';
+export {
+  GetDailyStreakRequestResolver,
+} from './request/GetDailyStreakRequestResolver';
+export {
+  GetHeatMapDataRequestResolver,
+} from './request/GetHeatMapDataRequestResolver';
+export {
+  GetDailyStreakResponseResolver,
+} from './response/GetDailyStreakResponseResolver';
+export {
+  GetHeatMapDataResponseResolver,
+} from './response/GetHeatMapDataResponseResolver';

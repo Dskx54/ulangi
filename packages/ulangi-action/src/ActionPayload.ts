@@ -714,4 +714,14 @@ export interface ActionPayload {
   readonly REMINDER__DELETE_REMINDER_FAILED: ErrorBag;
 
   readonly THEME__SYSTEM_MODE_CHANGED: { systemMode: Theme };
+
+  readonly STATISTICS__GET_DAILY_STREAK: null;
+  readonly STATISTICS__GETTING_DAILY_STREAK: null;
+  readonly STATISTICS__GET_DAILY_STREAK_SUCCEEDED: { dailyStreak: number };
+  readonly STATISTICS__GET_DAILY_STREAK_FAILED: ErrorBag;
+
+  readonly STATISTICS__GET_HEAT_MAP_DATA: { startDate: Date; endDate: Date };
+  readonly STATISTICS__GETTING_HEAT_MAP_DATA: null;
+  readonly STATISTICS__GET_HEAT_MAP_DATA_SUCCEEDED: { data: (number | null)[] };
+  readonly STATISTICS__GET_HEAT_MAP_DATA_FAILED: ErrorBag;
 }

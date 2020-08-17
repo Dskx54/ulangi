@@ -36,6 +36,8 @@ import { GetDictionaryEntryController } from './controllers/GetDictionaryEntryCo
 import { GetFirebaseTokenController } from './controllers/GetFirebaseTokenController';
 import { GetPublicSetCountController } from './controllers/GetPublicSetCountController';
 import { GetRemoteConfigController } from './controllers/GetRemoteConfigController';
+import { GetDailyStreakController } from "./controllers/GetDailyStreakController";
+import { GetHeatMapDataController } from "./controllers/GetHeatMapDataController";
 import { ProcessPurchaseController } from './controllers/ProcessPurchaseController';
 import { RequestPasswordResetController } from './controllers/RequestPasswordResetController';
 import { ResetPasswordController } from './controllers/ResetPasswordController';
@@ -167,6 +169,10 @@ export class ApiControllerFactory {
       ),
 
       new GetRemoteConfigController(this.remoteConfig),
+
+      new GetDailyStreakController(),
+
+      new GetHeatMapDataController(),
 
       new DownloadUserController(this.database, this.modelList.userModel),
 

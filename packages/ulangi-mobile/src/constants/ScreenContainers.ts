@@ -45,6 +45,7 @@ import { ManageScreenContainer } from '../views/manage/ManageScreenContainer';
 import { MembershipScreenContainer } from '../views/membership/MembershipScreenContainer';
 import { MoreScreenContainer } from '../views/more/MoreScreenContainer';
 import { PreloadScreenContainer } from '../views/preload/PreloadScreenContainer';
+import { ProgressScreenContainer } from '../views/progress/ProgressScreenContainer';
 import { QuizMultipleChoiceScreenContainer } from '../views/quiz/QuizMultipleChoiceScreenContainer';
 import { QuizScreenContainer } from '../views/quiz/QuizScreenContainer';
 import { QuizSettingsScreenContainer } from '../views/quiz/QuizSettingsScreenContainer';
@@ -151,4 +152,5 @@ export const ScreenContainers = {
   WRITING_SETTINGS_SCREEN: WritingSettingsScreenContainer,
   EVENT_LOGS_SCREEN: EventLogsScreenContainer,
   PUBLIC_VOCABULARY_DETAIL_SCREEN: PublicVocabularyDetailScreenContainer,
+  PROGRESS_SCREEN: ProgressScreenContainer,
 };

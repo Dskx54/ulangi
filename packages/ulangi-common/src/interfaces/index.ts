@@ -144,6 +144,8 @@ export {
 export { UploadSetsResponse } from './response/UploadSetsResponse';
 export { UploadUserResponse } from './response/UploadUserResponse';
 export { UploadVocabularyResponse } from './response/UploadVocabularyResponse';
+export { GetDailyStreakResponse } from './response/GetDailyStreakResponse';
+export { GetHeatMapDataResponse } from './response/GetHeatMapDataResponse';
 
 export { AdConfig } from './general/AdConfig';
 export { AppConfig } from './general/AppConfig';
@@ -203,3 +205,5 @@ export {
 export { UploadSetsRequest } from './request/UploadSetsRequest';
 export { UploadUserRequest } from './request/UploadUserRequest';
 export { UploadVocabularyRequest } from './request/UploadVocabularyRequest';
+export { GetDailyStreakRequest } from './request/GetDailyStreakRequest';
+export { GetHeatMapDataRequest } from './request/GetHeatMapDataRequest';
