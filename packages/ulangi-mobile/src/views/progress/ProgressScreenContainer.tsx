@@ -35,7 +35,7 @@ export class ProgressScreenContainer extends Container {
     new ObservableHeatMapState(
       this.dateRangeDelegate.createRangeByNumberOfDays(30),
       null,
-      ActivityState.INACTIVE
+      ActivityState.INACTIVE,
     ),
     this.props.componentId,
     ScreenName.PROGRESS_SCREEN,

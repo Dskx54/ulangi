@@ -25,7 +25,7 @@ export class GetDailyStreakController extends ApiController<
       paths: ['/get-daily-streak'],
       allowedMethod: 'get',
       authStrategies: [AuthenticationStrategy.ACCESS_TOKEN],
-      requestResolver: null
+      requestResolver: null,
     };
   }
 
@@ -34,7 +34,7 @@ export class GetDailyStreakController extends ApiController<
     res: ApiResponse<GetDailyStreakResponse>
   ): Promise<void> {
     res.json({
-      dailyStreak: 124
-    })
+      dailyStreak: 124,
+    });
   }
 }

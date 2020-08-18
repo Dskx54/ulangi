@@ -1,5 +1,5 @@
 import { ActivityState } from '@ulangi/ulangi-common/enums';
-import { computed,observable } from 'mobx';
+import { computed, observable } from 'mobx';
 import * as moment from 'moment';
 
 export class ObservableHeatMapState {

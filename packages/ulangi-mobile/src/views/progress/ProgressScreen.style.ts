@@ -71,7 +71,7 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
 
       view_streak_button: {
         color: config.styles.primaryColor,
-        textAlign: 'center'
+        textAlign: 'center',
       },
 
       view_heat_map_button: {

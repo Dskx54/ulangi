@@ -2,8 +2,9 @@ import { Theme } from '@ulangi/ulangi-common/enums';
 import { ObservableScreenLayout } from '@ulangi/ulangi-observable';
 import * as _ from 'lodash';
 import { observer } from 'mobx-react';
+import * as moment from 'moment';
 import * as React from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { config } from '../../constants/config';
 import {
@@ -16,6 +17,7 @@ export interface HeatMapProps {
   data: (number | null)[];
   theme: Theme;
   screenLayout: ObservableScreenLayout;
+  showDataPoint: (date: Date, value: string | number) => void;
 }
 
 @observer
@@ -28,6 +30,7 @@ export class HeatMap extends React.Component<HeatMapProps> {
   }
 
   public render(): React.ReactElement<any> {
+    const [startDate] = this.props.range;
     return (
       <View style={this.styles.container}>
         {this.props.data.map(
@@ -50,7 +53,22 @@ export class HeatMap extends React.Component<HeatMapProps> {
               ? config.heatMap.onFire.styles
               : config.heatMap.unavailable.styles;
 
-            return <View key={index} style={[this.styles.item, styles]} />;
+            const date = moment(startDate)
+              .add(index, 'days')
+              .toDate();
+
+            return (
+              <TouchableOpacity
+                key={index}
+                style={[this.styles.item, styles]}
+                onPress={(): void => {
+                  this.props.showDataPoint(
+                    date,
+                    count === null ? 'N/A' : count,
+                  );
+                }}
+              />
+            );
           },
         )}
       </View>

@@ -32,12 +32,12 @@ import { DownloadSpecificVocabularyController } from './controllers/DownloadSpec
 import { DownloadUserController } from './controllers/DownloadUserController';
 import { DownloadVocabularyController } from './controllers/DownloadVocabularyController';
 import { GetApiKeyController } from './controllers/GetApiKeyController';
+import { GetDailyStreakController } from './controllers/GetDailyStreakController';
 import { GetDictionaryEntryController } from './controllers/GetDictionaryEntryController';
 import { GetFirebaseTokenController } from './controllers/GetFirebaseTokenController';
+import { GetHeatMapDataController } from './controllers/GetHeatMapDataController';
 import { GetPublicSetCountController } from './controllers/GetPublicSetCountController';
 import { GetRemoteConfigController } from './controllers/GetRemoteConfigController';
-import { GetDailyStreakController } from "./controllers/GetDailyStreakController";
-import { GetHeatMapDataController } from "./controllers/GetHeatMapDataController";
 import { ProcessPurchaseController } from './controllers/ProcessPurchaseController';
 import { RequestPasswordResetController } from './controllers/RequestPasswordResetController';
 import { ResetPasswordController } from './controllers/ResetPasswordController';

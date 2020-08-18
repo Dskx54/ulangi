@@ -109,6 +109,9 @@ export class ProgressScreen extends React.Component<ProgressScreenProps> {
                 data={this.props.observableScreen.heatMapState.data}
                 theme={this.props.themeStore.theme}
                 screenLayout={this.props.observableScreen.screenLayout}
+                showDataPoint={(date, value): void => {
+                  this.props.screenDelegate.showHeatMapDataPoint(date, value);
+                }}
               />
             </View>
             <DefaultText style={this.styles.note}>
