@@ -29,8 +29,8 @@ export class HeatMapResponsiveStyles extends ResponsiveStyleSheet<
         flexWrap: 'wrap',
       },
       item: {
-        height: scaleByFactor(26),
-        width: scaleByFactor(26),
+        height: scaleByFactor(24),
+        width: scaleByFactor(24),
         borderRadius: scaleByFactor(2),
         margin: scaleByFactor(2),
       },

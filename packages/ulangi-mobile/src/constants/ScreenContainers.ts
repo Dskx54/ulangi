@@ -45,6 +45,7 @@ import { ManageScreenContainer } from '../views/manage/ManageScreenContainer';
 import { MembershipScreenContainer } from '../views/membership/MembershipScreenContainer';
 import { MoreScreenContainer } from '../views/more/MoreScreenContainer';
 import { PreloadScreenContainer } from '../views/preload/PreloadScreenContainer';
+import { HeatMapScreenContainer } from '../views/progress/HeatMapScreenContainer';
 import { HeatMapDataPointScreenContainer } from '../views/progress/HeatMapDataPointScreenContainer';
 import { ProgressScreenContainer } from '../views/progress/ProgressScreenContainer';
 import { QuizMultipleChoiceScreenContainer } from '../views/quiz/QuizMultipleChoiceScreenContainer';
@@ -154,5 +155,6 @@ export const ScreenContainers = {
   EVENT_LOGS_SCREEN: EventLogsScreenContainer,
   PUBLIC_VOCABULARY_DETAIL_SCREEN: PublicVocabularyDetailScreenContainer,
   PROGRESS_SCREEN: ProgressScreenContainer,
+  HEAT_MAP_SCREEN: HeatMapScreenContainer,
   HEAT_MAP_DATA_POINT_SCREEN: HeatMapDataPointScreenContainer,
 };

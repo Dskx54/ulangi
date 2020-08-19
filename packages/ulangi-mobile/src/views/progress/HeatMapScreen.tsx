@@ -12,10 +12,12 @@ import {
   HeatMapScreenStyles,
   heatMapScreenResponsiveStyles,
 } from '../progress/HeatMapScreen.style';
+import { HeatMapScreenDelegate } from "../../delegates/progress/HeatMapScreenDelegate"
 
 export interface HeatMapScreenProps {
   themeStore: ObservableThemeStore;
   observableScreen: ObservableHeatMapScreen;
+  screenDelegate: HeatMapScreenDelegate;
 }
 
 @observer

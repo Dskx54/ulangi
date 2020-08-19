@@ -7,4 +7,5 @@
 
 export const HeatMapScreenIds = {
   SCREEN: 'HEAT_MAP_SCREEN',
+  TOP_BAR: 'HEAT_MAP_TOP_BAR'
 };
