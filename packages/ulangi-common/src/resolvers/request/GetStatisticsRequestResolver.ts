@@ -7,11 +7,11 @@
 
 import * as Joi from 'joi';
 
-import { GetDailyStreakRequest } from '../../interfaces/request/GetDailyStreakRequest';
+import { GetStatisticsRequest } from '../../interfaces/request/GetStatisticsRequest';
 import { RequestResolver } from './RequestResolver';
 
-export class GetDailyStreakRequestResolver extends RequestResolver<
-  GetDailyStreakRequest
+export class GetStatisticsRequestResolver extends RequestResolver<
+  GetStatisticsRequest
 > {
   protected rules = {
     query: Joi.strip(),

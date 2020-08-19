@@ -37,7 +37,7 @@ export class GetHeatMapDataController extends ApiController<
     //const { startDate, endDate } = req.query
 
     res.json({
-      data: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      data: [0, 1, 22, 33, 34, 0, 12, 0, 21, 29, 20, 3, 53, 34, 0, 40, 23, 2, 85, 2, 84, 5, 1, 4, 0 ,5, 20, 30 ],
     });
   }
 }

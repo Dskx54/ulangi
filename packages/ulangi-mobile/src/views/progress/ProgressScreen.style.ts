@@ -17,15 +17,16 @@ import {
 
 export interface ProgressScreenStyles {
   screen: ViewStyle;
-  streak_container: ViewStyle;
   title: TextStyle;
   subtitle: TextStyle;
-  streak_count: TextStyle;
-  view_streak_button: TextStyle;
   view_heat_map_button: TextStyle;
   note: TextStyle;
   heat_map_container: ViewStyle;
   heat_map: ViewStyle;
+  statistics_container: ViewStyle;
+  statistics_list: ViewStyle;
+  statistics_item: ViewStyle;
+  count: TextStyle;
   spinner: ViewStyle;
   error_message: TextStyle;
   highlighted: TextStyle;
@@ -43,15 +44,8 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
         flex: 1,
       },
 
-      streak_container: {
-        marginHorizontal: scaleByBreakpoints(
-          defaultHorizontalMarginByBreakpoints,
-        ),
-        marginTop: scaleByFactor(20),
-      },
-
       title: {
-        fontSize: scaleByFactor(14),
+        fontSize: scaleByFactor(15),
         textAlign: 'center',
         fontWeight: 'bold',
         letterSpacing: -0.5,
@@ -59,18 +53,6 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
 
       subtitle: {
         fontSize: scaleByFactor(14),
-        textAlign: 'center',
-      },
-
-      streak_count: {
-        fontSize: scaleByFactor(32),
-        textAlign: 'center',
-        fontWeight: 'bold',
-        paddingVertical: scaleByFactor(10),
-      },
-
-      view_streak_button: {
-        color: config.styles.primaryColor,
         textAlign: 'center',
       },
 
@@ -86,15 +68,42 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
 
       heat_map_container: {
         marginTop: scaleByFactor(20),
-        paddingTop: scaleByFactor(16),
-        borderTopWidth: StyleSheet.hairlineWidth,
+        paddingTop: scaleByFactor(10),
         marginHorizontal: scaleByBreakpoints(
           defaultHorizontalMarginByBreakpoints,
         ),
       },
 
       heat_map: {
-        paddingVertical: scaleByFactor(14),
+        paddingVertical: scaleByFactor(16),
+      },
+
+      statistics_container: {
+        marginHorizontal: scaleByBreakpoints(
+          defaultHorizontalMarginByBreakpoints,
+        ),
+        marginTop: scaleByFactor(20),
+        paddingTop: scaleByFactor(20),
+        borderTopWidth: StyleSheet.hairlineWidth,
+      },
+
+      statistics_list: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: scaleByFactor(10),
+      },
+
+      statistics_item: {
+        paddingHorizontal: scaleByFactor(20),
+        paddingVertical: scaleByFactor(12),
+      },
+
+      count: {
+        fontSize: scaleByFactor(40),
+        textAlign: 'center',
+        fontWeight: 'bold',
       },
 
       spinner: {
@@ -116,23 +125,23 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
   public lightStyles(): Partial<ProgressScreenStyles> {
     return {
       title: {
-        color: config.styles.light.secondaryTextColor,
+        color: config.styles.light.primaryTextColor,
       },
 
       subtitle: {
         color: config.styles.light.secondaryTextColor,
       },
 
-      streak_count: {
+      statistics_container: {
+        borderTopColor: config.styles.light.primaryBorderColor,
+      },
+
+      count: {
         color: config.styles.light.primaryTextColor,
       },
 
       note: {
         color: config.styles.light.secondaryTextColor,
-      },
-
-      heat_map_container: {
-        borderTopColor: config.styles.light.primaryBorderColor,
       },
 
       error_message: {
@@ -149,23 +158,23 @@ export class ProgressScreenResponsiveStyles extends ResponsiveStyleSheet<
       },
 
       title: {
-        color: config.styles.dark.secondaryTextColor,
+        color: config.styles.dark.primaryTextColor,
       },
 
       subtitle: {
         color: config.styles.dark.secondaryTextColor,
       },
 
-      streak_count: {
+      statistics_container: {
+        borderTopColor: config.styles.dark.primaryBorderColor,
+      },
+
+      count: {
         color: config.styles.dark.primaryTextColor,
       },
 
       note: {
         color: config.styles.dark.secondaryTextColor,
-      },
-
-      heat_map_container: {
-        borderTopColor: config.styles.dark.primaryBorderColor,
       },
 
       error_message: {

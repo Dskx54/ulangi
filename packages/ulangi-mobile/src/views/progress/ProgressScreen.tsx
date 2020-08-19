@@ -40,40 +40,66 @@ export class ProgressScreen extends React.Component<ProgressScreenProps> {
         useSafeAreaView={true}
         style={this.styles.screen}>
         <ScrollView>
-          {this.renderDailyStreak()}
           {this.renderHeatMap()}
+          {this.renderStatistics()}
         </ScrollView>
       </Screen>
     );
   }
 
-  private renderDailyStreak(): React.ReactElement<any> {
+  private renderStatistics(): React.ReactElement<any> {
     return (
-      <View style={this.styles.streak_container}>
-        <DefaultText style={this.styles.title}>DAILY STREAK</DefaultText>
-        {this.props.observableScreen.dailyStreakState.fetchState ===
+      <View style={this.styles.statistics_container}>
+        <DefaultText style={this.styles.title}>STATISTICS</DefaultText>
+        {this.props.observableScreen.statisticsState.fetchState ===
         ActivityState.ERROR ? (
           <DefaultText style={this.styles.error_message}>
             <DefaultText>
-              Error: Cannot fetch daily streak. Please check internet connection
+              Error: Cannot fetch statistics. Please check internet connection
               and{' '}
             </DefaultText>
             <DefaultText
-              onPress={this.props.screenDelegate.getDailyStreak}
+              onPress={this.props.screenDelegate.getStatistics}
               style={this.styles.highlighted}>
               try again.
             </DefaultText>
           </DefaultText>
-        ) : this.props.observableScreen.dailyStreakState.dailyStreak !==
-          null ? (
-          <React.Fragment>
-            <DefaultText style={this.styles.streak_count}>
-              {this.props.observableScreen.dailyStreakState.dailyStreak}
-            </DefaultText>
-            <DefaultText style={this.styles.view_streak_button}>
-              View streak history
-            </DefaultText>
-          </React.Fragment>
+        ) : this.props.observableScreen.statisticsState.statistics !== null ? (
+          <View style={this.styles.statistics_list}>
+            <View style={this.styles.statistics_item}>
+              <DefaultText style={this.styles.subtitle}>
+                Daily streak
+              </DefaultText>
+              <DefaultText style={this.styles.count}>
+                {
+                  this.props.observableScreen.statisticsState.statistics
+                    .dailyStreak
+                }
+              </DefaultText>
+            </View>
+            <View style={this.styles.statistics_item}>
+              <DefaultText style={this.styles.subtitle}>
+                Total reviews
+              </DefaultText>
+              <DefaultText style={this.styles.count}>
+                {
+                  this.props.observableScreen.statisticsState.statistics
+                    .totalReviews
+                }
+              </DefaultText>
+            </View>
+            <View style={this.styles.statistics_item}>
+              <DefaultText style={this.styles.subtitle}>
+                {'Average reviews\nper day'}
+              </DefaultText>
+              <DefaultText style={this.styles.count}>
+                {
+                  this.props.observableScreen.statisticsState.statistics
+                    .averageReviewsPerDay
+                }
+              </DefaultText>
+            </View>
+          </View>
         ) : (
           <ActivityIndicator style={this.styles.spinner} size="small" />
         )}

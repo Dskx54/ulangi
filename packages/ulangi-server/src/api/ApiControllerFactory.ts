@@ -32,7 +32,7 @@ import { DownloadSpecificVocabularyController } from './controllers/DownloadSpec
 import { DownloadUserController } from './controllers/DownloadUserController';
 import { DownloadVocabularyController } from './controllers/DownloadVocabularyController';
 import { GetApiKeyController } from './controllers/GetApiKeyController';
-import { GetDailyStreakController } from './controllers/GetDailyStreakController';
+import { GetStatisticsController } from './controllers/GetStatisticsController';
 import { GetDictionaryEntryController } from './controllers/GetDictionaryEntryController';
 import { GetFirebaseTokenController } from './controllers/GetFirebaseTokenController';
 import { GetHeatMapDataController } from './controllers/GetHeatMapDataController';
@@ -170,7 +170,7 @@ export class ApiControllerFactory {
 
       new GetRemoteConfigController(this.remoteConfig),
 
-      new GetDailyStreakController(),
+      new GetStatisticsController(),
 
       new GetHeatMapDataController(),
 

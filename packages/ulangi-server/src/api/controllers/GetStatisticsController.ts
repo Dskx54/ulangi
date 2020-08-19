@@ -6,8 +6,8 @@
  */
 
 import {
-  GetDailyStreakRequest,
-  GetDailyStreakResponse,
+  GetStatisticsRequest,
+  GetStatisticsResponse,
 } from '@ulangi/ulangi-common/interfaces';
 
 import { AuthenticationStrategy } from '../../enums/AuthenticationStrategy';
@@ -16,13 +16,13 @@ import { ApiRequest } from '../ApiRequest';
 import { ApiResponse } from '../ApiResponse';
 import { ApiController } from './ApiController';
 
-export class GetDailyStreakController extends ApiController<
-  GetDailyStreakRequest,
-  GetDailyStreakResponse
+export class GetStatisticsController extends ApiController<
+  GetStatisticsRequest,
+  GetStatisticsResponse
 > {
-  public options(): ControllerOptions<GetDailyStreakRequest> {
+  public options(): ControllerOptions<GetStatisticsRequest> {
     return {
-      paths: ['/get-daily-streak'],
+      paths: ['/get-statistics'],
       allowedMethod: 'get',
       authStrategies: [AuthenticationStrategy.ACCESS_TOKEN],
       requestResolver: null,
@@ -30,11 +30,15 @@ export class GetDailyStreakController extends ApiController<
   }
 
   public async handleRequest(
-    _: ApiRequest<GetDailyStreakRequest>,
-    res: ApiResponse<GetDailyStreakResponse>
+    _: ApiRequest<GetStatisticsRequest>,
+    res: ApiResponse<GetStatisticsResponse>
   ): Promise<void> {
     res.json({
-      dailyStreak: 124,
+      statistics: {
+        dailyStreak: 124,
+        totalReviews: 363,
+        averageReviewsPerDay: 25,
+      }
     });
   }
 }

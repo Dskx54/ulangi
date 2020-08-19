@@ -1,9 +1,9 @@
 import { Options } from '@ulangi/react-native-navigation';
 import { ActivityState, ScreenName, Theme } from '@ulangi/ulangi-common/enums';
 import {
-  ObservableDailyStreakState,
   ObservableHeatMapState,
   ObservableProgressScreen,
+  ObservableStatisticsState,
   ObservableTitleTopBar,
 } from '@ulangi/ulangi-observable';
 import { observer } from 'mobx-react';
@@ -31,7 +31,7 @@ export class ProgressScreenContainer extends Container {
   private dateRangeDelegate = this.screenFactory.createDateRangeDelegate();
 
   protected observableScreen = new ObservableProgressScreen(
-    new ObservableDailyStreakState(null, ActivityState.INACTIVE),
+    new ObservableStatisticsState(null, ActivityState.INACTIVE),
     new ObservableHeatMapState(
       this.dateRangeDelegate.createRangeByNumberOfDays(30),
       null,
@@ -57,7 +57,7 @@ export class ProgressScreenContainer extends Container {
   }
 
   public componentDidAppear(): void {
-    this.screenDelegate.getDailyStreak();
+    this.screenDelegate.getStatistics();
     this.screenDelegate.getHeatMapData();
   }
 

@@ -29,6 +29,7 @@ import {
   Purchase,
   RemoteConfig,
   Set,
+  Statistics,
   Translation,
   TranslationWithLanguages,
   User,
@@ -715,10 +716,10 @@ export interface ActionPayload {
 
   readonly THEME__SYSTEM_MODE_CHANGED: { systemMode: Theme };
 
-  readonly STATISTICS__GET_DAILY_STREAK: null;
-  readonly STATISTICS__GETTING_DAILY_STREAK: null;
-  readonly STATISTICS__GET_DAILY_STREAK_SUCCEEDED: { dailyStreak: number };
-  readonly STATISTICS__GET_DAILY_STREAK_FAILED: ErrorBag;
+  readonly STATISTICS__GET_STATISTICS: null;
+  readonly STATISTICS__GETTING_STATISTICS: null;
+  readonly STATISTICS__GET_STATISTICS_SUCCEEDED: { statistics: Statistics };
+  readonly STATISTICS__GET_STATISTICS_FAILED: ErrorBag;
 
   readonly STATISTICS__GET_HEAT_MAP_DATA: { startDate: Date; endDate: Date };
   readonly STATISTICS__GETTING_HEAT_MAP_DATA: null;

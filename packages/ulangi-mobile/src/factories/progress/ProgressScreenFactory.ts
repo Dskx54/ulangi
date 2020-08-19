@@ -1,9 +1,9 @@
 import { ObservableProgressScreen } from '@ulangi/ulangi-observable';
 
-import { DailyStreakDelegate } from '../../delegates/progress/DailyStreakDelegate';
 import { DateRangeDelegate } from '../../delegates/progress/DateRangeDelegate';
 import { HeatMapDelegate } from '../../delegates/progress/HeatMapDelegate';
 import { ProgressScreenDelegate } from '../../delegates/progress/ProgresScreenDelegate';
+import { StatisticsDelegate } from '../../delegates/progress/StatisticsDelegate';
 import { ScreenFactory } from '../ScreenFactory';
 
 export class ProgressScreenFactory extends ScreenFactory {
@@ -16,9 +16,9 @@ export class ProgressScreenFactory extends ScreenFactory {
   ): ProgressScreenDelegate {
     const navigatorDelegate = this.createNavigatorDelegate();
 
-    const dailyStreakDelegate = new DailyStreakDelegate(
+    const statisticsDelegate = new StatisticsDelegate(
       this.eventBus,
-      observableScreen.dailyStreakState,
+      observableScreen.statisticsState,
     );
 
     const heatMapDelegate = new HeatMapDelegate(
@@ -27,7 +27,7 @@ export class ProgressScreenFactory extends ScreenFactory {
     );
 
     return new ProgressScreenDelegate(
-      dailyStreakDelegate,
+      statisticsDelegate,
       heatMapDelegate,
       navigatorDelegate,
     );

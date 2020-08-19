@@ -9,12 +9,12 @@ import { assertExists } from '@ulangi/assert';
 import { SQLiteDatabase } from '@ulangi/sqlite-adapter';
 import { Action, ActionType, createAction } from '@ulangi/ulangi-action';
 import {
-  GetDailyStreakRequest,
   GetHeatMapDataRequest,
+  GetStatisticsRequest,
 } from '@ulangi/ulangi-common/interfaces';
 import {
-  GetDailyStreakResponseResolver,
   GetHeatMapDataResponseResolver,
+  GetStatisticsResponseResolver,
 } from '@ulangi/ulangi-common/resolvers';
 import { SessionModel } from '@ulangi/ulangi-local-database';
 import axios, { AxiosResponse } from 'axios';
@@ -27,7 +27,7 @@ import { createRequest } from '../utils/createRequest';
 import { ProtectedSaga } from './ProtectedSaga';
 
 export class StatisticsSaga extends ProtectedSaga {
-  private getDailyStreakResponseResolver = new GetDailyStreakResponseResolver();
+  private getStatisticsResponseResolver = new GetStatisticsResponseResolver();
   private getHeatMapDataResponseResolver = new GetHeatMapDataResponseResolver();
 
   private sharedDb: SQLiteDatabase;
@@ -40,18 +40,18 @@ export class StatisticsSaga extends ProtectedSaga {
   }
 
   public *run(env: SagaEnv): IterableIterator<any> {
-    yield fork([this, this.allowGetDailyStreak], env.API_URL);
+    yield fork([this, this.allowGetStatistics], env.API_URL);
 
     yield fork([this, this.allowGetHeatMapData], env.API_URL);
   }
 
-  public *allowGetDailyStreak(apiUrl: string): IterableIterator<any> {
+  public *allowGetStatistics(apiUrl: string): IterableIterator<any> {
     while (true) {
       try {
-        yield take(ActionType.STATISTICS__GET_DAILY_STREAK);
+        yield take(ActionType.STATISTICS__GET_STATISTICS);
 
         yield put(
-          createAction(ActionType.STATISTICS__GETTING_DAILY_STREAK, null)
+          createAction(ActionType.STATISTICS__GETTING_STATISTICS, null)
         );
 
         const accessToken: PromiseType<
@@ -60,29 +60,29 @@ export class StatisticsSaga extends ProtectedSaga {
 
         const response: AxiosResponse<any> = yield call(
           [axios, 'request'],
-          createRequest<GetDailyStreakRequest>(
+          createRequest<GetStatisticsRequest>(
             'get',
             apiUrl,
-            '/get-daily-streak',
+            '/get-statistics',
             null,
             null,
             { accessToken: assertExists(accessToken) }
           )
         );
 
-        const { dailyStreak } = this.getDailyStreakResponseResolver.resolve(
+        const { statistics } = this.getStatisticsResponseResolver.resolve(
           response.data,
           true
         );
 
         yield put(
-          createAction(ActionType.STATISTICS__GET_DAILY_STREAK_SUCCEEDED, {
-            dailyStreak,
+          createAction(ActionType.STATISTICS__GET_STATISTICS_SUCCEEDED, {
+            statistics,
           })
         );
       } catch (error) {
         yield put(
-          createAction(ActionType.STATISTICS__GET_DAILY_STREAK_FAILED, {
+          createAction(ActionType.STATISTICS__GET_STATISTICS_FAILED, {
             errorCode: errorConverter.getErrorCode(error),
             error,
           })

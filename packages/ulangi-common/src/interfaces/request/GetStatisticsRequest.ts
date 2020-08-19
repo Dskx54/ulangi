@@ -7,8 +7,8 @@
 
 import { Request } from './Request';
 
-export interface GetDailyStreakRequest extends Request {
-  readonly path: '/get-daily-streak';
+export interface GetStatisticsRequest extends Request {
+  readonly path: '/get-statistics';
   readonly method: 'get';
   readonly authRequired: true;
   readonly query: null;

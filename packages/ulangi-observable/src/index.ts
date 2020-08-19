@@ -414,11 +414,14 @@ export {
 } from './observables/browser/ObservableBrowserScreen';
 
 export {
-  ObservableDailyStreakState,
-} from './observables/progress/ObservableDailyStreakState';
+  ObservableStatisticsState,
+} from './observables/progress/ObservableStatisticsState';
 export {
   ObservableHeatMapState,
 } from './observables/progress/ObservableHeatMapState';
 export {
   ObservableProgressScreen,
 } from './observables/progress/ObservableProgressScreen';
+export {
+  ObservableHeatMapScreen,
+} from './observables/progress/ObservableHeatMapScreen';

@@ -266,14 +266,14 @@ export {
   UploadVocabularyRequestResolver,
 } from './request/UploadVocabularyRequestResolver';
 export {
-  GetDailyStreakRequestResolver,
-} from './request/GetDailyStreakRequestResolver';
+  GetStatisticsRequestResolver,
+} from './request/GetStatisticsRequestResolver';
 export {
   GetHeatMapDataRequestResolver,
 } from './request/GetHeatMapDataRequestResolver';
 export {
-  GetDailyStreakResponseResolver,
-} from './response/GetDailyStreakResponseResolver';
+  GetStatisticsResponseResolver,
+} from './response/GetStatisticsResponseResolver';
 export {
   GetHeatMapDataResponseResolver,
 } from './response/GetHeatMapDataResponseResolver';

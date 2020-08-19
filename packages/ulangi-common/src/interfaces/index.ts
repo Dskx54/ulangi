@@ -45,6 +45,7 @@ export {
   QuizWritingHighlightOnError,
 } from './general/QuizWritingHighlightOnError';
 export { RemoteConfig } from './general/RemoteConfig';
+export { Statistics } from './general/Statistics';
 export { Set } from './general/Set';
 export { SetFeatureSettings } from './general/SetFeatureSettings';
 export { SetSelectionMenuOptions } from './general/SetSelectionMenuOptions';
@@ -144,7 +145,7 @@ export {
 export { UploadSetsResponse } from './response/UploadSetsResponse';
 export { UploadUserResponse } from './response/UploadUserResponse';
 export { UploadVocabularyResponse } from './response/UploadVocabularyResponse';
-export { GetDailyStreakResponse } from './response/GetDailyStreakResponse';
+export { GetStatisticsResponse } from './response/GetStatisticsResponse';
 export { GetHeatMapDataResponse } from './response/GetHeatMapDataResponse';
 
 export { AdConfig } from './general/AdConfig';
@@ -205,5 +206,5 @@ export {
 export { UploadSetsRequest } from './request/UploadSetsRequest';
 export { UploadUserRequest } from './request/UploadUserRequest';
 export { UploadVocabularyRequest } from './request/UploadVocabularyRequest';
-export { GetDailyStreakRequest } from './request/GetDailyStreakRequest';
+export { GetStatisticsRequest } from './request/GetStatisticsRequest';
 export { GetHeatMapDataRequest } from './request/GetHeatMapDataRequest';

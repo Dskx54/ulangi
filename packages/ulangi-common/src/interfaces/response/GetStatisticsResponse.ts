@@ -5,6 +5,8 @@
  * See LICENSE or go to https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-export interface GetDailyStreakResponse {
-  readonly dailyStreak: number;
+import { Statistics } from "../general/Statistics"
+
+export interface GetStatisticsResponse {
+  readonly statistics: Statistics
 }

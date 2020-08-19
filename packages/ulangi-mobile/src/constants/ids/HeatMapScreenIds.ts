@@ -5,7 +5,6 @@
  * See LICENSE or go to https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-export const ProgressScreenIds = {
-  SCREEN: 'PROGRESS_SCREEN',
-  TOP_BAR: 'PROGRESS_SCREEN_TOP_BAR',
+export const HeatMapScreenIds = {
+  SCREEN: 'HEAT_MAP_SCREEN',
 };

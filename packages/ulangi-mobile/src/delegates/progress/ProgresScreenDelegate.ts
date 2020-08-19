@@ -3,27 +3,27 @@ import { boundClass } from 'autobind-decorator';
 
 import { SecondaryScreenStyle } from '../../styles/SecondaryScreenStyle';
 import { NavigatorDelegate } from '../navigator/NavigatorDelegate';
-import { DailyStreakDelegate } from './DailyStreakDelegate';
 import { HeatMapDelegate } from './HeatMapDelegate';
+import { StatisticsDelegate } from './StatisticsDelegate';
 
 @boundClass
 export class ProgressScreenDelegate {
-  private dailyStreakDelegate: DailyStreakDelegate;
+  private statisticsDelegate: StatisticsDelegate;
   private heatMapDelegate: HeatMapDelegate;
   private navigatorDelegate: NavigatorDelegate;
 
   public constructor(
-    dailyStreakDelegate: DailyStreakDelegate,
+    statisticsDelegate: StatisticsDelegate,
     heatMapDelegate: HeatMapDelegate,
     navigatorDelegate: NavigatorDelegate,
   ) {
-    this.dailyStreakDelegate = dailyStreakDelegate;
+    this.statisticsDelegate = statisticsDelegate;
     this.heatMapDelegate = heatMapDelegate;
     this.navigatorDelegate = navigatorDelegate;
   }
 
-  public getDailyStreak(): void {
-    this.dailyStreakDelegate.getDailyStreak();
+  public getStatistics(): void {
+    this.statisticsDelegate.getStatistics();
   }
 
   public getHeatMapData(): void {
